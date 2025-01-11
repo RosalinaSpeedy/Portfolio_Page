@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- sets the language for the page -->
+<html lang="en">
+
+<head>
+    <!-- sets the charset for the page - a mostly universal choice in utf-8 -->
+    <meta charset="utf-8">
+    <!-- sets the viewport and initial scale so that responsive css can work as usual -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ben's References Page</title>
+    <!-- links to the google fonts for my chosen fonts as well as my own css files -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League%20Spartan">
+    <!-- external css used here: linking to own css file -->
+    <link rel="stylesheet" href="../css/main.css"> </head>
+
+<body>
+    <!-- all nav data is contained within the header -->
+    <!-- semantic elements used - header ensures that all content in the navbar is semantically defined -->
+    <header>
+        <!-- defines the navbar - and sets the icon image to appear first -->
+        <!-- semantic elements used: nav is a valid element for this use -->
+        <!-- Icon image: -->
+        <nav class="navHead"> <img class="iconLogo" src="../media/iconlogo.png" alt="Logo">
+            <!-- creates a generic text container for the tagline -->
+            <div class="tagline mont"> Sleuth moment... </div>
+            <!-- defines a wrapper for all buttons on navbar so all can be formatted at once -->
+            <div class="quickNavigate">
+                <!-- uses form as a valid child element of div as usual linking via <a> is not valid in a <div> -->
+                <!-- upper navbar navigation buttons: -->
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- generic text element for the REFERENCES title: -->
+    <div id="referencesTitle" class="spartans"> REFERENCES </div>
+    <!-- defines a wrapper for the references section to ensure column layount and handle padding -->
+    <div id="referencesWrapper">
+        <!-- each references section has a wrapper that encapsulates the image, title and paragraph -->
+        <div class="referencesSection"> <img class="refererPortrait" src="../media/kobina.png" alt="referer portrait">
+            <!-- defines a separate wrapper for the text so that the heading and paragraph can follow a column structure -->
+            <div class="referenceTextWrapper">
+                <!-- referer title: -->
+                <div class="refererTitle spartans"> KOBINA </div>
+                <!-- reference body: -->
+                <!-- the reference uses two <span> elements: one for the ellipsis that vanishes when read more is clicked, and one for the read more/less button that changes text based on the state of the paragraph -->
+                <div class="referenceBody mont"> My name is Kobina and I run the Kobby Corperation - we specialise in creating applications that make computer case fans run slightly quiter. Ben worked with us on a project called "CaseSilent" which is an app for control of your CPU fan speed from your smart phone or other device. He designed a really good app with our API. The application was designed to eradicate noisy desktops for good in the workplace. Ben managed to create a simple but effective solution which involved some software<span class="readMoreEllipsis">...</span> <span class="readMoreContinued">
+                      that completely stopped the fans from spinning. Granted, it resulted in 17 test computers overheating and 56 melted front-panel connectors but it is really the results that count. Would highly recommend!
+                    </span>
+                    <!-- the read more button will have a unique ID so that it can be identified easily through a JS script -->
+                    <button id="readMore1" class="readMore spartans">Read more...</button>
+                </div>
+            </div>
+        </div>
+        <!-- there are two more references sections that follow an identical structure with different content: -->
+        <div class="referencesSection"> <img class="refererPortrait" src="../media/fred.png" alt="referer portrait">
+            <div class="referenceTextWrapper">
+                <div class="refererTitle spartans"> FREDDY </div>
+                <div class="referenceBody mont"> My name is Fred and I am the owner of the Freddy Foundation. Our company always strives for more money than we previously had and therefore Ben was an asset to our "profitHere" project. Ben came up with a brilliant solution to alter our current front-end services to forcefully display as many adverts as possible to any users that visited our sites. I'm not going to go into details about how the system works because I'm sure if you ask Ben he would be happy. To put it simply, we could maximise profits<span class="readMoreEllipsis">...</span> <span class="readMoreContinued">
+                    entirely. As a money-lover: could not recommend highly enough.
+                    </span>
+                    <button id="readMore2" class="readMore spartans">Read more...</button>
+                </div>
+            </div>
+        </div>
+        <div class="referencesSection"> <img class="refererPortrait" src="../media/montgomery.png" alt="referer portrait">
+            <div class="referenceTextWrapper">
+                <div class="refererTitle spartans"> MONTGOMERY IGNATIUS </div>
+                <div class="referenceBody mont"> Ben coded me this little bot that turned all the pictures on my mate Gazza's work profile account into pictures of this weird-looking sheep we found on the internet it was well funny. Proper bant. The sheep was well weird-looking and it was totally a sheep and Gazza was in proper deep trouble with his boss after that. Absolutely banging. There's just something well funny about all this code nonsense so yeah, thanks for that mate. Me and Ben are both in agreement that this is the funniest sheep<span class="readMoreEllipsis">...</span> <span class="readMoreContinued">
+                      image known to man. I think there's a real market for bots that change other images into sheep and I don't know why we aren't putting more effort into this.
+                    </span>
+                    <button id="readMore3" class="readMore spartans">Read more...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop-up window: -->
+    <div id="popUpOverlay">
+        <div class="popUpWindow">
+            <!-- uses a generic text element to define a header and main body secion -->
+            <!-- header includes an image and title and close button: -->
+            <!-- pop-up window image: -->
+            <div class="popUpHeader"> <img class="popUpImage" src="../media/kobina.png" alt="PopUp Image">
+                <!-- pop-up window title: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpTitle spartans"> SHOULD NOT APPEAR </div>
+                <!-- a simple close button: -->
+                <button id="popUpCloseButton" class="mont"> X </button>
+            </div>
+            <!-- wrapper for body of pop-up window to format background: -->
+            <div class="popUpBody">
+                <!-- pop-up body paragraph defined separately so as to handle padding separately -->
+                <!-- pop-up window body: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpBodyText mont"> This text should not appear </div>
+            </div>
+        </div>
+    </div>
+    <!-- all lower nav data is contained within the footer -->
+    <!-- semantic elements used - footer ensures that all content in the lower navbar is semantically defined -->
+    <footer>
+        <!-- footerNav is a separate class to ensure correct formatting -->
+        <nav class="navHead footerNav">
+            <!-- the navbar button structure is repeated here -->
+            <div class="quickNavigate">
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+            <!-- social section: (defined as a wrapper to ensure2 inline formatting) -->
+            <div class="socialHolder">
+                <!-- external links to social media sites: <img> elements have class social to ensure correct border-radius -->
+                
+                <!-- IMPORTANT! - No actual links to prevent submission of work that was not my own, instead a pop up window is used to create a response. -->
+                
+                <img id="social1" class="social" src="../media/socialicon1.png" alt="Social 1">
+                <img id="social2" class="social" src="../media/socialicon2.png" alt="Social 2">
+            <!-- image icon is repeated in the bottom right: -->
+            </div> <img id="bottomIcon" class="iconLogo" src="../media/iconlogo.png" alt="Logo"> </nav>
+    </footer>
+    <!-- external JS used exclusively: -->
+    <!-- script to handle the read more/less functionality: -->
+    <script src="../scripts/readmoreless.js"></script>
+    <!-- script to handle the overlay/pop-up window functionality: -->
+    <script src="../scripts/overlayhandle.js"></script>
+</body>
+
+</html>

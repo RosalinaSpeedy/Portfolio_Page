@@ -1,0 +1,925 @@
+/*css that affects the entire visible page:*/
+body {
+    /*sets the background to the correct shade of blue:*/
+    background-color: #4D5F6D;
+    /*removes the default padding and margin:*/
+    padding: 0px;
+    margin: 0px;
+    /*adds an appropriate level of padding to the top of the body*/
+    padding-top: 10%;
+    /*prevents horizontal scrolling as the layout only requires a vertical scroll*/
+    overflow-x: hidden;
+}
+
+/*css that affects the navbar(s)*/
+nav {
+    /*sets the background of the nav to the correct shade of blue*/
+    background-color: #171C30;
+    /*removes the browser deafult padding and margins:*/
+    margin-left: none;
+    margin-top: none;
+    padding: none;
+    /*sets the position to relative to ensure the nav always appears relative to the body*/
+    position: relative;
+    /*sets an appropriate z-index to ensure the nav is always visible when needed*/
+    z-index: 1000;
+}
+
+/*css affecting the index page navbar*/
+#aboutScroll {
+    /*sets the display type to block as this gets changed by the JS script - so must be initialised*/
+    display: block;
+    /*sets the fade transition for the navbar upon scrolling to the about section*/
+    transition: visibility 0s, opacity 0.6s linear;
+}
+
+/*css affects both top and bottom navbars*/
+.navHead {
+    /*sets an inline display*/
+    display: inline-flex;
+    /*makes the content shift to the right of the previous child element*/
+    float: left;
+    /*makes the conent get aligned in the middle of the navbar (veritcally)*/
+    align-content: center;
+    /*adjusts the padding so that there is a decent enough gap between the edges of the bar and the child elements*/
+    padding: 1%;
+    padding-right: none;
+    width: 100%;
+    /*responsive css considerations: ensures that the navbar doesn't wrap when the window shrinks*/
+    white-space: nowrap;
+}
+
+/*css only affects the top navbar*/
+header .navHead {
+    /*positions the top navbar flush with the top-left hand corner of the screen*/
+    bottom: inherit;
+    left: 0;
+    position: fixed;
+    top: 0;
+}
+
+/*css affecting the logos in the top and bottom navbars*/
+.iconLogo {
+    /*sets the width and height to 20% to ensure a decent central position*/
+    width: 20%;
+    height: 20%;
+    /*sets the margin to the right to a suitable level to make sure that the elements that are floated left next to it are displayed properly*/
+    margin-right: 2%;
+}
+
+/*css affecting the "Sleuth moment.." tagline*/
+.tagline {
+    /*responsive css considerations: sets the font size to 2.34% of the screen width*/
+    font-size: 2.34vw;
+    /*sets a margin to ensure floated elements are displayed nicely*/
+    margin-right: 8%;
+    /*declares the animation to shift the tagline colour from orange to grey: it takes 5 seconds and loops*/
+    animation: orange-to-grey 5s infinite;
+}
+
+/*css defining the keyframes for the exact workings of the orange to grey colour shift animation*/
+@keyframes orange-to-grey {
+    /*at 0 seconds, the colour is grey*/
+    0% {
+        color: #BDBDBD;
+    }
+    /*at 2.5 seconds, the colour is orange*/ 
+    50% {
+        color: orange;
+    }
+    /*at 5 seconds, the colour is back to grey for the repetition*/
+    100% {
+        color: #BDBDBD;
+    }
+}
+
+/*css defining the Montserrat font for all respective text elements*/
+.mont {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*css defining the League Spartan font for all respective text elements*/
+.spartans {
+    font-family: 'League Spartan';
+    /*emboldens all League Spartan text*/
+    font-weight: bolder;
+}
+
+/*css affecting all child elements of any navbar*/
+nav * {
+    /*centers all elements vertically by setting auto margins on the top and bottom: placing it in the center*/
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*css affects all buttons in a quicknavigate menu (the buttons in the navbars at the top and bottom)*/
+.quickNavigate button {
+    /*adds a slight rounding to the edges of the buttons*/
+    border-radius: 0.45rem;
+    /*responsive css considerations: text scales according to the screen width*/
+    font-size: 1.61vw;
+    /*applies padding so the text stays in the correct place*/
+    padding-bottom: 4%;
+    padding-top: 4%;
+    padding-right: 1%;
+    padding-left: 1%;
+    /*removes the default left/right margins while keeping the automatice top/bottom margins*/
+    margin-right: 0%;
+    margin-left: 0%;
+    /*sets the width of the button*/
+    width: 38%;
+}
+
+/*css affecting the top half of the index page*/
+.topIndexSection {
+    /*sets the display to flex to ensure a row structure*/
+    display: flex;
+    flex-direction: row;
+    /*responsive css considerations: enables wrapping*/
+    flex-wrap: wrap;
+    /*ensures correct display (padding/width/margins)*/
+    padding: 0.8%;
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+/*css affecting the bottom half of the index page*/
+.bottomIndexSection {
+    /*sets up an inline column display*/
+    flex: auto;
+    display: inline-block;
+    padding: 0.8%;
+    margin-bottom: 3%;
+    width: 100%;
+    /*enables wrapping*/
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+/*css affecting the "Who am i?" portrait*/
+.whoAmIImage {
+    margin-right: 1rem;
+    /*responsive css: image scales to viewport width*/
+    height: 22vw;
+    width: 22vw;
+}
+
+/*css affecting the wrapper for the "who am I?" title and paragraph*/
+.aboutMeHolder {
+    width: 75%;
+    /*ensures that the text only takes up the designated amount of the flexbox width*/
+    flex: 0 0 50%;
+}
+
+/*css affecting the title for the "who am I" section*/
+.whoAmITitle {
+    /*responsive css: text scales to viewport width*/
+    font-size: 4.68vw;
+    color: #D6D6D6;
+}
+
+/*css affecting the paragraph for the "who am I" section*/
+.aboutMeParagraph {
+    color: #E8E8E8;
+    /*responsive css: text scales to viewport width*/
+    font-size: 1.75vw;
+    width: 90%;
+    margin-right: none;
+    padding: none;
+}
+
+/*css affecting the wrapper for the "view portfolio" button*/
+.viewPortfolioHolder {
+    /*uses automatic argins to center the button vertically*/
+    margin-bottom: auto;
+    margin-top: auto;
+    /*ensures the wrapper takes up the remainder of the flexbox width*/
+    flex: 1 0 auto;
+}
+
+/*css affecting the "Take a closer look..." text*/
+.closerLook {
+    font-size: 23.905px;
+    color: #D6D6D6;
+}
+
+/*css affecting the "take a closer look..." text in the experiences section*/
+.viewReferencesHolder .closerLook {
+    /*aligns text to the left*/
+    text-align: left;
+}
+
+/*css affecting the "view ..." buttons on the index page*/
+.viewButton {
+    border-radius: 1rem;
+    font-size: 25.954px;
+    /*ensures text is aligned to the left of the button*/
+    text-align: left;
+    padding-bottom: 2.3%;
+    padding-top: 2.3%;
+    padding-right: 1.7%;
+    padding-left: 1.2%;
+    margin-right: 1px;
+    margin-left: 1px;
+    /*applies an inline display so that the arrow is displayed horizontally aligned to the text*/
+    display: inline-flex;
+}
+
+/*css affecting all button elements*/
+button {
+    /*sets all buttons to have the same blue colour*/
+    background-color: rgb(134, 166, 182);
+    /*gives a dark, solid border*/
+    border: 3px solid #171C30;
+    color: #171C30;
+}
+
+/*css affecting all buttons' hover types*/
+button:hover {
+    /*sets the colour of a button to white on hover*/
+    background-color: #FFFFFF;
+}
+
+/*css affecting the state of a button when clicked*/
+button:active {
+    /*changes to a relative position*/
+    position: relative;
+    /*shifts the button down one pixel so that the user has a visual response that the button is clicked.*/
+    top: 1px;
+}
+
+/*baseline for arrow css taken from the following URL and then adapted to meet my needs (visuals adjusted):*/
+/*W3Schools, 'How TO - CSS Arrows', [Online], Available: https://www.w3schools.com/howto/howto_css_arrows.asp [Accessed: 2022]*/
+
+/*css affecting arrows within "view..." buttons*/
+.viewArrow {
+    /*sets a solid, dark border*/
+    border: solid #171C30;
+    /*create the arrow shape*/
+    border-width: 0px 3px 3px 0px;
+    /*rotate the arrow so it points to the right*/
+    transform: rotate(-45deg);
+    /*position the arrow within the button*/
+    padding: 4px;
+    margin-left: 90px;
+    /*automatically centers the arrow vertically:*/
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*css affecting arrows in the dropdown menu button*/
+.dropArrow {
+    border: solid #171C30;
+    border-width: 0px 3px 3px 0px;
+    transform: rotate(45deg);
+    padding: 4px;
+    margin-left: 2.8rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*css affecting all form elements (all links to other pages included*/
+form {
+    display: inline;
+}
+
+/*css affecting the "My experiences" title on the index page*/
+.experiencesTitle {
+    /*responsive css considerations: text scales to the viewport width*/
+    font-size: 4.02vw;
+    color: #D6D6D6;
+}
+
+/*css affecting the wrapper for the "my experiences" section on the index page*/
+.experiencesHolder {
+    /*sets an inline column layout*/
+    display: inline-block;
+    /*aligns elements horizontally central*/
+    text-align: center;
+    /*disables wrapping*/
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin-top: 1%;
+    /*uses auto margins to ensure elements stay aligned horizontally*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*css affecting the images in the "my experiences" section of the index page*/
+.experienceLink {
+    /*responsive css considerations: image size will scale to the viewport width*/
+    width: 15vw;
+    height: 15vw;
+    /*fade transition to create a hover effect:*/
+    transition: .6s ease;
+}
+
+/*css affecting the image links in the portfolio page*/
+.portfolioLink {
+    /*fade transition to create a hover effect:*/
+    transition: .6s ease;
+    width: 100%;
+}
+
+/*css affecting the image links in the "my experiences" section of the index page*/
+.experienceImageLinks {
+    /*give an inline display to ennsure a row strucure for the images*/
+    display: inline-flex;
+    margin-bottom: 2%;
+}
+
+/*css affecting the wrapper for the "my process" section of the index page*/
+.processHolder {
+    /*define an inline column structure*/
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: none;
+    padding: none;
+    width: 52%;
+}
+
+/*css concerning all child elements of the process wrapper*/
+.processHolder * {
+    position: relative;
+    z-index: auto;
+}
+
+/*css affecting the process video*/
+.mainVid {
+    margin-bottom: 5%;
+}
+
+/*css affecting the "my process" title*/
+.processTitle {
+    font-size: 39px;
+    color: #D6D6D6;
+}
+
+/*css affecting the social media buttons in the footer*/
+.social {
+    /*responsive css considerations: the buttons scale to the viewport width*/
+    height: 5.49vw;
+    width: 5.49vw;
+    /*makes the border for the buttons a circle*/
+    border-radius: 50%;
+    /*adds a fade transition as a hover effect*/
+    transition: .6s ease;
+}
+
+/*css concering the hover effect for the social media buttons*/
+.social:hover {
+    /*reduces the opacity*/
+    opacity: 0.4;
+}
+
+/*css concerning the footer (includes everything in the lower nav bar and the nav bar itself)*/
+footer {
+    margin-top: 1%;
+}
+
+/*css concerning all quick naviagtion buttons in the lower nav bar*/
+.footerNav .quickNavigate {
+    margin-right: auto;
+}
+
+/*css concerning the wrapper for the social media buttons*/
+.footerNav .socialHolder {
+    margin-right: 8%;
+    margin-left: 6.5%;
+}
+
+/*css concerning the icon logo in the bottom nav bar*/
+.footerNav .iconLogo {
+    margin-right: none;
+}
+
+/*css affecting the hover effect for the experience links*/
+.experienceLink:hover {
+    /*reduces the opacity in accordance with the defined transition*/
+    opacity: 0.4;
+}
+
+/*css affecting the hover effect for the portfolio links*/
+.portfolioLink:hover {
+    opacity: 0.4;
+}
+
+/*css affecting the click effect for the experience links*/
+.experienceLink:active {
+    position: relative;
+    top: 1px;
+}
+
+/*css affecting the click effect for the portfolio links*/
+.portfolioLink:active {
+    position: relative;
+    top: 1px;
+}
+
+/*css affecting the click effect for the social media links*/
+.social:active {
+    position: relative;
+    top: 1px;
+}
+
+/*css affecting the "Portfolio" title wrapper for the main portfolio page*/
+.portfolioTitleHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5%;
+    align-content: center;
+    margin-bottom: 0.5%;
+}
+
+/*css affecting the "Portfolio" title for the main portfolio page*/
+.portfolioTitle {
+    color: #D6D6D6;
+    font-size: 5.49vw;
+    margin-right: 5%;
+}
+
+/*css affecting the button that displays the dropdown menu*/
+.dropDownButton {
+    border-radius: 17px;
+    font-size: 17.89px;
+    text-align: left;
+    padding-bottom: 6.5%;
+    padding-top: 6.5%;
+    margin-right: 1px;
+    margin-left: 1px;
+    display: inline-flex;
+}
+
+/*css affecting the wrapper for the paragraphs that explain the various languages on the portfolio page*/
+.aboutCodeHolder {
+    padding: 0.5%;
+}
+
+/*css affecting the decorational image on the portfolio page*/
+.aboutCodeHolder img {
+    width: 90%;
+    /*using max-width in this way ensures that the image doesn not get squished and retains its aspect ratio*/
+    max-width: 90%;
+    height: 35%;
+    margin-left: 1%;
+    margin-bottom: 8%;
+}
+
+/*baseline for dropdown menu taken from the following URL and then adapted to meet my needs (Changing visuals and alignment of elements and text and adjusting z-index value to ensure correct layering of elements):
+
+W3Schools, 'How TO - Hoverable Dropdown', [Online], Avaliable: https://www.w3schools.com/howto/howto_css_dropdown.asp [Accessed: 2022]*/
+
+/*css affecting the entire dropdown menu system*/
+.dropdown {
+    position: relative;
+    /*ensures a column structure*/
+    display: inline-block;
+    /*aligns content entirely within the defined flex structure*/
+    align-content: flex-end;
+}
+
+/*css concerning the options that appear once the drodown button is hovered over*/
+.dropdownOptions {
+    /*hides the dropdown options to begin with*/
+    display: none;
+    /*position is absolute - anchored entirely to the parent element*/
+    position: absolute;
+    background-color: #FFFFFF;
+    margin-left: 6%;
+    min-width: 87%;
+    /*sets the z-index so the element is always visible below the navbar*/
+    z-index: 1;
+}
+
+/*css concerning the text in the dropdown options*/
+.dropdownOptions div {
+    color: black;
+    padding: 5%;
+    /*prevents the default underlining of text once the button is clicked*/
+    text-decoration: none;
+    display: block;
+}
+
+/*css concerning the hover effect for the dropdown list*/
+.dropdownOptions div:hover {
+    /*changes the colours of the text and the background*/
+    color: orange;
+    background-color: darkslategrey;
+}
+
+/*css concerning the options children elements of the hovered dropdown button*/
+.dropdown:hover .dropdownOptions {
+    /*displays the dropdown options*/
+    display: block;
+}
+
+/*css concerning the wrapper for the about paragraphs for the various languages on the portfolio page*/
+.aboutCodeColumnHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    width: 85%;
+    max-width: 85%;
+}
+
+/*css concerning the title for the code description columns on the portfolio page*/
+.aboutCodeColumnTitle {
+    color: #D6D6D6;
+    font-size: 2.26vw;
+    width: 100%;
+    max-width: 100%;
+}
+
+/*css concerning the paragrpah bodies for the code description columns on the portfolio page*/
+.aboutCodeColumnBody {
+    color: #E8E8E8;
+    width: 70%;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*css concerning the code description columns on the portfolio page*/
+.aboutCodeColumn {
+    /*algins the content central horizontally*/
+    text-align: center;
+    margin-left: 1.5%;
+    margin-right: 0.1%;
+    /*ensures that each colum only takes up 15% of the flexbox*/
+    flex: 1 1 15%;
+    width: 100%;
+    max-width: 100%;
+}
+
+/*css affecting the "my work" heading on the portfolio page*/
+.myWorkTitle {
+    color: #D6D6D6;
+    font-size: 3.29vw;
+    text-align: center;
+    margin-top: 4.6%;
+    margin-bottom: 1%;
+}
+
+/*css affecting the half-column wrappers used on the portfolio page*/
+.portfolioHalfColumn {
+    width: 50%;
+}
+
+/*css affecting the entire visible body of the portfolio to ensure that the columns get displayed correctly*/
+#portfolioBodyWrapper {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+/*grid layouts - the full grid is displayed by default*/
+/*css concerning the full portfolio grid*/
+.fullGrid {
+    display: grid;
+}
+
+/*css concerning the Java portfolio grid*/
+.javaGrid {
+    display: none;
+}
+
+/*css concerning the HTML portfolio grid*/
+.HTMLGrid {
+    display: none;
+}
+
+/*css concerning the JavaScript portfolio grid*/
+.JSGrid {
+    display: none;
+}
+
+/*css concerning the 3x3 portfolio grid layout*/
+.grid3x3 {
+    /*sets there to be 3 columns taking up 33% of the width of the container*/
+    grid-template-columns: repeat(3, 33%);
+    /*aligns content to the start of the flexbox*/
+    align-items: flex-start;
+}
+
+/*css concerning the 2x3 portfolio grid layout*/
+.grid2x3 {
+    /*sets there to be 2 columns each taking up 33% of the width of the container*/
+    grid-template-columns: repeat(2, 33%);
+    /*glues the elements to the left-hand edge of the column*/
+    justify-self: start;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*css concerning all anchor links*/
+a {
+    /*removes the default underlining for links*/
+    text-decoration: none;
+}
+
+/*css affecting the "References" title heading on the references page*/
+#referencesTitle {
+    text-align: center;
+    align-content: center;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: #D6D6D6;
+    text-decoration: none;
+    font-size: 6vw;
+}
+
+/*css affecting the read more button*/
+.readMore {
+    border-radius: 6px;
+    border: 2px solid #171C30;
+    font-size: 17.8px;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+/*css affecting the individual reference section: including portrait, tlte and paragraph etc.*/
+.referencesSection {
+    display: inline-flex;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding: 0.5%;
+    width: 100%;
+}
+
+/*css affecting the entire reference section exluding the title*/
+.referencesWrapper {
+    display: inline-block;
+    padding: 1%;
+    padding-right: 5%;
+}
+
+/*css affecting the pictures that accompany the references*/
+.refererPortrait {
+    margin-right: 0.4%;
+    width: 15vw;
+    height: 15vw;
+}
+
+/*css affecting the names of the referers*/
+.refererTitle {
+    color: #D6D6D6;
+    font-size: 27.86px;
+}
+
+/*css affecting the main paragraph of the reference*/
+.referenceBody {
+    color: #E8E8E8;
+    font-size: 1.79vw;
+    padding-right: 2%;
+    margin-bottom: 2%;
+}
+
+/*css concerning the end of the paragraph contained in the "read more" section*/
+.readMoreContinued {
+    /*hides the read more section to begin with*/
+    display: none;
+}
+
+/*baseline for pop-up window taken from the following URL and then adapted to meet my needs (visuals adjusted, transitions added, developed custom layout):*/
+/*W3Schools, 'How TO - Overlay', [Online], Available: https://www.w3schools.com/howto/howto_css_overlay.asp [Accessed: 2022]*/
+
+/*css concerning the overall pop up object*/
+#popUpOverlay {
+    /*ensures the pop-up covers the screen*/
+    position: fixed;
+    /*hides the pop-up upon page load*/
+    visibility: hidden;
+    /*sets the opacity to 0% to ensure effective use of transition*/
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*applies the translucent background*/
+    background-color: rgba(0, 0, 0, 0.7);
+    /*pop-up is always displayed over everything else thanks to highest z-index*/
+    z-index: 10001;
+    /*defines the fade transition for displaying the pop-up*/
+    transition: visibility 0s, opacity 0.6s linear;
+}
+
+/*css concerning the box layout for the pop-up*/
+.popUpWindow {
+    /*is positioned according the the overlay which covers the whole screen*/
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
+}
+
+/*css concerning the box that contains the title, image and close button for the pop-up window*/
+.popUpHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: #171C30;
+    align-content: center;
+    padding: 1%;
+}
+
+/*css concerning all child elements of the pop-up header: centering them all vertically*/
+.popUpHeader * {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*css concerning the pop-up window image*/
+.popUpImage {
+    width: 12%;
+    height: 12%;
+    margin-right: 4%;
+}
+
+/*css concerning the title for the pop-up window*/
+.popUpTitle {
+    color: #9A9A9A;
+    font-size: 300%;
+}
+
+/*css concerning the main box of the pop-up window*/
+.popUpBody {
+    background-color: #4D5F6D;
+    padding: 2%;
+    height: auto;
+}
+
+/*css concerning the paragraph within the pop-up window*/
+.popUpBodyText {
+    color: white;
+    font-size: 135%;
+}
+
+/*css concerning the pop-up window close button*/
+#popUpCloseButton {
+    /*positions the close button relative to the header - gluing it to the top right corner of the window*/
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*responsive css considerations: the tagline is hidden once the screen is shrunk to a reaonsable size as it doesn't provide cruicial information*/
+
+/*css considering hiding the tagline once the screen is shrunk below a width of 1280px*/
+@media screen and (max-width: 1280px) {
+    .tagline {
+        visibility: hidden;
+        width: 0%;
+    }
+}
+
+/*responsive css considerations: using an @media query here to define an explicit mobile layout for phones and thin displays*/
+
+@media screen and (max-width: 896px) {
+    /*adjusts the distance between the navbar and the top of the body content*/
+    .topIndexSection {
+        margin-top: 3%;
+    }
+    /*fixes the lower navbar to the bottom of the screen*/
+    .footerNav {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+    }
+    /*adjusts the size of the icon logo in the top navbar*/
+    #topNav .iconLogo {
+        width: 25%;
+        height: 25%;
+    }
+    /*adjusts the width of the about me paragraph to force the button to wrap onto the next line*/
+    .aboutMeParagraph {
+        width: 100%;
+        font-size: 11px;
+    }
+    /*adjusts the width of the about me wrapper to force the button to wrap onto the next line*/
+    .aboutMeHolder {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+    /*adjusts the margin of the view portfolio button to keep in line with page formatting*/
+    .viewPortfolioHolder {
+        align-content: center;
+        margin-left: 18%;
+    }
+    /*centers all content on the bottom of the index page*/
+    .bottomIndexSection {
+        align-content: center;
+    }
+    .viewReferencesHolder {
+        margin-bottom: 4%;
+        align-content: center;
+        text-align: center;
+    }
+    /*hides the bottom icon as it doesn't provide vital info or content for the mobile layout*/
+    #bottomIcon {
+        visibility: hidden;
+    }
+    
+    /*font sizes and widths of content elements are manually adjusted to better fit the mobile layout*/
+    
+    .quickNavigate {
+        width: 38%;
+        height: 25%;
+    }
+    .quickNavigate button {
+        font-size: 9.5px;
+        margin-right: 0.5px;
+        margin-left: 0.5px;
+    }
+    body {
+        padding-top: 5%;
+        padding-bottom: 20%;
+    }
+    .socialHolder {
+        width: 10%;
+        height: 5%;
+        position: absolute;
+        right: 10%;
+        bottom: 80%;
+    }
+    .social {
+        width: 50%;
+        height: 1400%;
+    }
+    .whoAmIImage {
+        height: 130px;
+        width: 130px;
+    }
+    .whoAmITitle {
+        font-size: 26px;
+    }
+    .experienceLink {
+        width: 100px;
+        height: 100px;
+    }
+    /*aligns content to the start of the flexbox and ensures that all content is correctly aligned within the column structure*/
+    .viewReferencesHolder .closerLook {
+        margin-left: 7%;
+        text-align: left;
+        align-content: flex-start;
+    }
+    
+    /*font sizes and widths and margins of content elements are manually adjusted to better fit the mobile layout*/
+    
+    .processHolder video {
+        width: 190%;
+    }
+    .processHolder .processTitle {
+        width: 80%;
+        margin-left: 55%;
+    }
+    .experiencesTitle {
+        font-size: 40px;
+    }
+    .popUpTitle {
+        font-size: 20px;
+    }
+    .popUpBodyText {
+        font-size: 85%;
+    }
+    .popUpWindow {
+        width: 80%;
+        left: 10%;
+    }
+    
+    /*changes the alignment of the experiences wrapper so as to match the newly wrapped format*/
+    .experiencesHolder {
+        align-content: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    header {
+        margin-top: 10%;
+    }
+    /*forces wrapping by making the half column equal to 100% of the width of the screen*/
+    .portfolioHalfColumn {
+        width: 100vw;
+    }
+    /*forces a column layout for the portfolio page*/
+    #portfolioBodyWrapper {
+        display: block;
+        flex-direction: column;
+    }
+    .myWorkTitle {
+        font-size: 40px;   
+    }
+    .referenceBody {
+        font-size: 15px;
+    }
+}

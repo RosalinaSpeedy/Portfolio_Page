@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<!-- sets the language for the page -->
+<html lang="en">
+
+<head>
+    <!-- sets the charset for the page - a mostly universal choice in utf-8 -->
+    <meta charset="utf-8">
+    <!-- sets the viewport and initial scale so that responsive css can work as usual -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ben's Portfolio Page</title>
+    <!-- links to the google fonts for my chosen fonts as well as my own css files -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League%20Spartan">
+    <!-- external css used here: linking to own css file -->
+    <link rel="stylesheet" href="../css/main.css"> </head>
+
+<body>
+    <!-- all nav data is contained within the header -->
+    <!-- semantic elements used - header ensures that all content in the navbar is semantically defined -->
+    <header>
+        <!-- defines the navbar - and sets the icon image to appear first -->
+        <!-- semantic elements used: nav is a valid element for this use -->
+        <!-- Icon image: -->
+        <nav class="navHead"> <img class="iconLogo" src="../media/iconlogo.png" alt="Logo">
+            <!-- creates a generic text container for the tagline -->
+            <div class="tagline mont"> Sleuth moment... </div>
+            <!-- defines a wrapper for all buttons on navbar so all can be formatted at once -->
+            <div class="quickNavigate">
+                <!-- uses form as a valid child element of div as usual linking via <a> is not valid in a <div> -->
+                <!-- upper navbar navigation buttons: -->
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- defines a wrapper for the main content of the page so it call all have a default level of formatting -->
+    <div id="portfolioBodyWrapper">
+        <!-- half column layout - splits the page into two equal columns - half the page each -->
+        <!-- left column: -->
+        <div class="portfolioHalfColumn" id="left">
+            <!-- wrapper for the portfolio page title to have inline formatting for the title and button: -->
+            <div class="portfolioTitleHolder">
+                <!-- portfolio title: -->
+                <div class="portfolioTitle spartans"> PORTFOLIO </div>
+                
+                <!-- baseline for dropdown menu taken from the following URL and then adapted to meet my needs (adjusting the ID structure to be a class structure and adding an arrow element to the dropdown menu button): -->
+
+                <!-- W3Schools, 'How TO - Hoverable Dropdown', [Online], Available: https://www.w3schools.com/howto/howto_css_dropdown.asp [Accessed: 2022] -->
+                
+                <!-- dropdown menu wrapper: -->
+                <div class="dropdown">
+                    <!-- dropdown button with an inline <i> element to make the arrow -->
+                    <button class="dropdownMenu dropDownButton mont">Choose Platform<i class="dropArrow"></i></button>
+                    <!-- defines a series of elements that are the options displayed by the dropdown menu: -->
+                    <div class="dropdownOptions">
+                        <!-- each dropdown option has a different ID so to be handled separately by JS -->
+                        <div id="dropAll" class="mont">All Platforms</div>
+                        <div id="dropJava" class="mont">Java</div>
+                        <div id="dropJavascript" class="mont">JavaScript</div>
+                        <div id="dropHTML" class="mont">HTML</div>
+                    </div>
+                </div>
+            </div>
+            <!-- wrapper for all content below title for formatting: -->
+            <!-- decorational image: -->
+            <div class="aboutCodeHolder"> <img src="../media/decorationalimage.jpg" alt="decorational image">
+                <!--wrapper for all about code paragraphs to ensure inline formatting -->
+                <div class="aboutCodeColumnHolder">
+                    <!-- each column has a title and paragraph that are centrally aligned -->
+                    <div class="aboutCodeColumn">
+                        <div class="aboutCodeColumnTitle spartans"> JAVA </div>
+                        <div class="aboutCodeColumnBody mont"> Java is a high-level, object oriented language - this page has some Java projects I've worked on </div>
+                    </div>
+                    <div class="aboutCodeColumn">
+                        <div class="aboutCodeColumnTitle spartans"> JAVASCRIPT </div>
+                        <div class="aboutCodeColumnBody mont"> JavaScript runs client-side web operations - here are some projects where I was involved in development of this. </div>
+                    </div>
+                    <div class="aboutCodeColumn">
+                        <div class="aboutCodeColumnTitle spartans"> HTML </div>
+                        <div class="aboutCodeColumnBody mont"> HTML is the markup language the web is built on: here are some web projects where I was tasked with making layouts </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- right-hand side half column wrapper - ensures consistency with the two halves column layout -->
+        <div class="portfolioHalfColumn" id="right">
+            <!-- sub-heading: (handled by generic text element) -->
+            <div class="myWorkTitle spartans"> MY WORK </div>
+            <!-- grid layout filled with up to 9 images that are linked to pop-ups via their IDs -->
+            <div class="grid3x3 fullGrid"> <!-- Base iages obtained via Craiyon.com generation and then visuals adjused and changed by me in an image editor -->
+                <!-- each image has a wrapper that handles the click event and an image that handles display and formatting -->
+                <!-- image link wrapper -->
+                <div class="portfolioLinkHolder" id="FGpLink1">
+                    <!-- image link to pop-up window -->
+                    <img class="portfolioLink JavaRec" src="../media/java1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink2">
+                    <img class="portfolioLink JavaRec" src="../media/java2.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink3">
+                    <img class="portfolioLink JavaRec" src="../media/java3.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink4">
+                    <img class="portfolioLink JavaRec" src="../media/java4.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink5">
+                    <img class="portfolioLink HTMLRec" src="../media/java5.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink6">
+                    <img class="portfolioLink HTMLRec" src="../media/html1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink7">
+                    <img class="portfolioLink JSRec" src="../media/html2.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink8">
+                    <img class="portfolioLink JavaRec" src="../media/js1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="FGpLink9">
+                    <img class="portfolioLink JSRec" src="../media/js2.png" alt="portfolio image link">
+                </div>
+            </div>
+            <!-- separate grid layout that only displays certain links -->
+            <div class="grid3x3 JavaGrid">
+                <div class="portfolioLinkHolder" id="pLink1">
+                    <img class="portfolioLink JavaRec" src="../media/java1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink2">
+                    <img class="portfolioLink JavaRec" src="../media/java2.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink3">
+                    <img class="portfolioLink JavaRec" src="../media/java3.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink4">
+                    <img class="portfolioLink JavaRec" src="../media/java4.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink5">
+                    <img class="portfolioLink JavaRec" src="../media/java5.png" alt="portfolio image link">
+                </div>
+            </div>
+            <!-- separate grid layout that only displays certain links -->
+            <div class="grid2x3 HTMLGrid">
+                <div class="portfolioLinkHolder" id="pLink6">
+                    <img class="portfolioLink HTMLRec" src="../media/html1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink7">
+                    <img class="portfolioLink HTMLRec" src="../media/html2.png" alt="portfolio image link">
+                </div>
+            </div>
+            <!-- separate grid layout that only displays certain links -->
+            <div class="grid2x3 JSGrid">
+                <div class="portfolioLinkHolder" id="pLink8">
+                    <img class="portfolioLink JSRec" src="../media/js1.png" alt="portfolio image link">
+                </div>
+                <div class="portfolioLinkHolder" id="pLink9">
+                    <img class="portfolioLink JSRec" src="../media/js2.png" alt="portfolio image link">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pop-up window: -->
+    <div id="popUpOverlay">
+        <div class="popUpWindow">
+            <!-- uses a generic text element to define a header and main body secion -->
+            <!-- header includes an image and title and close button: -->
+            <!-- pop-up window image: -->
+            <div class="popUpHeader"> <img class="popUpImage" src="../media/kobina.png" alt="PopUp Image">
+                <!-- pop-up window title: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpTitle spartans"> SHOULD NOT APPEAR </div>
+                <!-- a simple close button: -->
+                <button id="popUpCloseButton" class="mont"> X </button>
+            </div>
+            <!-- wrapper for body of pop-up window to format background: -->
+            <div class="popUpBody">
+                <!-- pop-up body paragraph defined separately so as to handle padding separately -->
+                <!-- pop-up window body: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpBodyText mont"> This text should not appear </div>
+            </div>
+        </div>
+    </div>
+    <!-- all lower nav data is contained within the footer -->
+    <!-- semantic elements used - footer ensures that all content in the lower navbar is semantically defined -->
+    <footer>
+        <!-- footerNav is a separate class to ensure correct formatting -->
+        <nav class="navHead footerNav">
+            <!-- the navbar button structure is repeated here -->
+            <div class="quickNavigate">
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+            <!-- social section: (defined as a wrapper to ensure inline formatting) -->
+            <div class="socialHolder">
+                <!-- external links to social media sites: <img> elements have class social to ensure correct border-radius -->
+                
+                <!-- IMPORTANT! - No actual links to prevent submission of work that was not my own, instead a pop up window is used to create a response. -->
+                
+                <img id="social1" class="social" src="../media/socialicon1.png" alt="Social 1">
+                <img id="social2" class="social" src="../media/socialicon2.png" alt="Social 2">
+            <!-- image icon is repeated in the bottom right: -->
+            </div> <img id="bottomIcon" class="iconLogo" src="../media/iconlogo.png" alt="Logo"> </nav>
+    </footer>
+    <!-- external JS used exclusively: -->
+    <!-- script to switch the displayed portfolio grid according to the chosen dropdown menu option: -->
+    <script src="../scripts/switchportfolio.js"></script>
+    <!-- handles pop-up windows and content for said overlays -->
+    <script src="../scripts/overlayhandle.js"></script>
+</body>
+
+</html>

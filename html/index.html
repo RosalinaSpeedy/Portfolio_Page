@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- sets the language for the page -->
+<html id="main" lang="en">
+
+<head>
+    <!-- sets the charset for the page - a mostly universal choice in utf-8 -->
+    <meta charset="utf-8">
+    <!-- sets the viewport and initial scale so that responsive css can work as usual -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ben's Portfolio Landing Page</title>
+    <!-- links to the google fonts for my chosen fonts as well as my own css files -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League%20Spartan">
+    <!-- external css used here: linking to own css file -->
+    <link rel="stylesheet" href="../css/main.css"> </head>
+
+<body>
+    <!-- all nav data is contained within the header -->
+    <!-- header uses id="aboutScroll" to make sure the javascript for hiding the navbar applies -->
+    <!-- semantic elements used - header ensures that all content in the navbar is semantically defined -->
+    <header id="aboutScroll">
+        <!-- defines the navbar - and sets the icon image to appear first -->
+        <!-- semantic elements used: nav is a valid element for this use -->
+        <!-- Icon image: -->
+        <nav class="navHead" id="topNav"> <img id="topIcon" class="iconLogo" src="../media/iconlogo.png" alt="Logo">
+            <!-- Tagline: creates a generic text container for the tagline -->
+            <div class="tagline mont"> Sleuth moment... </div>
+            <!-- defines a wrapper for all buttons on navbar so all can be formatted at once -->
+            <div class="quickNavigate">
+                <!-- uses form as a valid child element of div as usual linking via <a> is not valid in a <div> -->
+                <!-- upper navbar navigation buttons: -->
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- defines a wrapper for the top half of the screen -->
+    <div class="topIndexSection">
+        <!-- defines a wrapper for the image - image dimensions are therefore done according to the wrapper -->
+        <!-- my portrait image: -->
+        <div class="whoAmIImageHolder"> <img class="whoAmIImage" src="../media/whoamiimage.png" alt="Portrait of Me"> </div>
+        <!-- About Me, WHO AM I?: defined as an inline section which includes paragraph and view portfolio button -->
+        <div class="aboutMeHolder">
+            <div class="whoAmITitle spartans"> WHO AM I? </div>
+            <div class="aboutMeParagraph mont"> My name is Ben Craddock and I'm a developer. I've been working in web and software development since 2028 and I have always enjoyed programming in general. Most of my experience is in Java but I also have done front-end web dev: projects focusing on JavaScript and HTML. This site will provide insight into my relevant experiences so far.</div>
+        </div>
+        <!-- view portfolio button -->
+        <div class="viewPortfolioHolder">
+            <!-- closer look: defines a generic text element to display heading above button -->
+            <div class="closerLook spartans"> TAKE A CLOSER LOOK... </div>
+            <!-- VIEW PORTFOLIO Button: -->
+            <form action="../html/portfolio.html" method="get">
+                <button class="viewButton spartans">VIEW
+                    <br>PORTFOLIO <i class="viewArrow"></i></button>
+                <!-- uses an <i> element to make the arrow --></form>
+        </div>
+    </div>
+    <!-- bottom half page wrapper -->
+    <div class="bottomIndexSection">
+        <!-- my experiences section: -->
+        <!-- defines a wrapper for the experiences section so I can use a column-based layout -->
+        <div class="experiencesHolder">
+            <!-- Generic text section for title -->
+            <!-- MY EXPERIENCES title: -->
+            <div class="experiencesTitle spartans"> MY EXPERIENCES </div>
+            <!-- inline section for displaying the images in the experiences section -->
+            <div class="experienceImageLinks">
+                <!-- each image is given the according class to link it with a pop-up window -->
+                <div id="eLink1" class="experienceLinkHolder"> <img class="experienceLink" src="../media/kobina.png" alt="Experience 1"> </div>
+                <div id="eLink2" class="experienceLinkHolder"> <img class="experienceLink" src="../media/fred.png" alt="Experience 2"> </div>
+                <div id="eLink3" class="experienceLinkHolder"> <img class="experienceLink" src="../media/montgomery.png" alt="Experience 3"> </div>
+            </div>
+            <!-- view references button: (follows the same principles as the portfolio button) -->
+            <div class="closerLook spartans"> TAKE A CLOSER LOOK... </div>
+            <div class="viewReferencesHolder">
+                <form action="../html/references.html" method="get">
+                    <button class="viewButton spartans">VIEW
+                        <br>REFERENCES<i class="viewArrow"></i></button>
+                </form>
+            </div>
+        </div>
+        <!-- defines a wrapper for process video and caption -->
+        <div class="processHolder">
+            <!-- process video: -->
+            <!-- embeds the video and defines the default aspect ratio -->
+            <video width="550" height="260" class="mainVid" controls>
+                <!-- defines path and default text should the video not be able to be loaded -->
+                <source src="../media/process.mp4" type="video/mp4"> This video is not supported by your browser. </video>
+            <!-- MY PROCESS TITLE: (handled via generic text element) -->
+            <div class="processTitle spartans"> MY PROCESS </div>
+        </div>
+    </div>
+    <!-- pop-up window: -->
+    <div id="popUpOverlay">
+        <div class="popUpWindow">
+            <!-- uses a generic text element to define a header and main body secion -->
+            <!-- header includes an image and title and close button: -->
+            <!-- pop-up window image: -->
+            <div class="popUpHeader"> <img class="popUpImage" src="../media/kobina.png" alt="PopUp Image">
+                <!-- pop-up window title: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpTitle spartans"> SHOULD NOT APPEAR </div>
+                <!-- a simple close button: -->
+                <button id="popUpCloseButton" class="mont"> X </button>
+            </div>
+            <!-- wrapper for body of pop-up window to format background: -->
+            <div class="popUpBody">
+                <!-- pop-up body paragraph defined separately so as to handle padding separately -->
+                <!-- pop-up window body: (also defines default text should there be a failure in the JavaScript script) -->
+                <div class="popUpBodyText mont"> This text should not appear </div>
+            </div>
+        </div>
+    </div>
+    <!-- all lower nav data is contained within the footer -->
+    <!-- semantic elements used - footer ensures that all content in the lower navbar is semantically defined -->
+    <footer>
+        <!-- footerNav is a separate class to ensure correct formatting -->
+        <nav class="navHead footerNav">
+            <!-- the navbar button structure is repeated here -->
+            <div class="quickNavigate">
+                <form action="../html/index.html" method="get">
+                    <button class="quickNavButton spartans">HOME</button>
+                </form>
+                <form action="../html/index.html#aboutScroll" method="get">
+                    <button class="quickNavButton spartans">ABOUT</button>
+                </form>
+                <form action="../html/portfolio.html" method="get">
+                    <button class="quickNavButton spartans">PORTFOLIO</button>
+                </form>
+                <form action="../html/references.html" method="get">
+                    <button class="quickNavButton spartans">REFERENCES</button>
+                </form>
+            </div>
+            <!-- social section: (defined as a wrapper to ensure inline formatting) -->
+            <div class="socialHolder">
+                <!-- external links to social media sites: <img> elements have class social to ensure correct border-radius -->
+                
+                <!-- IMPORTANT! - No actual links to prevent submission of work that was not my own, instead a pop up window is used to create a response. -->
+                
+                <img id="social1" class="social" src="../media/socialicon1.png" alt="Social 1">
+                <img id="social2" class="social" src="../media/socialicon2.png" alt="Social 2">
+            <!-- image icon is repeated in the bottom right: -->
+            </div> <img id="bottomIcon" class="iconLogo" src="../media/iconlogo.png" alt="Logo"> </nav>
+    </footer>
+    <!-- external JS used exclusively: -->
+    <!-- handles the disappearing navbar for scrolling directly to the about section: -->
+    <script src="../scripts/aboutscrollhandling.js"></script>
+    <!-- handles pop-up windows and content for said overlays -->
+    <script src="../scripts/overlayhandle.js"></script>
+</body>
+
+</html>
